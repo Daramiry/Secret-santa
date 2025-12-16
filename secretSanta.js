@@ -19,17 +19,17 @@ function secretSanta(names) {
 
 // Initialize assignments once
 function initSanta() {
-  const names = ["Lupe", "Kim", "Maria", "Diego", "Miguel", "Victor", "Kax", "Dany", "Elaishah", "Marie"]; // 👈 family list
+  const names = ["Lupe", "Kim", "Maria", "Diego", "Miguel", "Victor", "Kax", "Dany", "Elaishah", "Marie"];
   let saved = localStorage.getItem("secretSantaAssignments");
   if (!saved) {
     const result = secretSanta(names);
-    localStorage.removeItem("secretSantaAssignments");
+    localStorage.setItem("secretSantaAssignments", JSON.stringify(result));
   }
   loadWishes();
 }
 
 function lookupSanta() {
-  const inputName = document.getElementById("nameInput").value.trim();
+  const inputName = document.getElementById("nameInput").value.trim().toLowerCase();
   const saved = JSON.parse(localStorage.getItem("secretSantaAssignments"));
 
   if (!inputName) {
@@ -37,23 +37,25 @@ function lookupSanta() {
     return;
   }
 
-  if (saved[inputName]) {
+  // Normalize keys from saved assignments
+  const normalized = {};
+  for (let key in saved) {
+    normalized[key.toLowerCase()] = saved[key];
+  }
+
+  if (normalized[inputName]) {
     document.getElementById("output").textContent =
-      `${inputName}, you are giving a gift to → ${saved[inputName]}`;
+      `${capitalize(inputName)}, you are giving a gift to → ${normalized[inputName]}`;
   } else {
     document.getElementById("output").textContent =
       "Name not found in the list. Please check spelling.";
   }
 }
 
-function saveWish() {
-  const name = document.getElementById("nameInput").value.trim();
-  const wish = document.getElementById("wishInput").value.trim();
+function capitalize(str) {
+  return str.replace(/\b\w/g, c => c.toUpperCase());
+}
 
-  if (!name || !wish) {
-    alert("Please enter both your name and a wish.");
-    return;
-  }
 
   let wishes = JSON.parse(localStorage.getItem("secretSantaWishes")) || {};
 
