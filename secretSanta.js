@@ -19,7 +19,7 @@ function secretSanta(names) {
 
 // Initialize assignments once
 function initSanta() {
-  const names = ["Lupe", "Kim", "Maria", "Diego", "Miguel", "Leo", "Victor", "Kax", "Dany", "Elaishah", "Marie"]; // 👈 family list
+  const names = ["Lupe", "Kim", "Maria", "Diego", "Miguel", "Victor", "Kax", "Dany", "Elaishah", "Marie"]; // 👈 family list
   let saved = localStorage.getItem("secretSantaAssignments");
   if (!saved) {
     const result = secretSanta(names);
