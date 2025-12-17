@@ -1,17 +1,17 @@
 // Initialize assignments once
 function initSanta() {
-  // Fixed assignments for everyone
+  // New randomized assignments for everyone
   const assignments = {
     "Lupe": "Victor",
-    "Kim": "Maria",
-    "Maria": "Diego",
-    "Diego": "Elaishah",
-    "Miguel": "Lupe",
-    "Victor": "Kim",
-    "Kax": "Miguel",
-    "Dany": "Marie",
-    "Elaishah": "Kax",
-    "Marie": "Dany"
+    "Kim": "Marie",
+    "Maria": "Elaishah",
+    "Diego": "Miguel",
+    "Miguel": "Kax",
+    "Victor": "Maria",
+    "Kax": "Dany",
+    "Dany": "Kim",
+    "Elaishah": "Lupe",
+    "Marie": "Diego"
   };
 
   // Save once so lookupSanta can use it
@@ -19,6 +19,7 @@ function initSanta() {
 
   loadWishes();
 }
+
 
 function lookupSanta() {
   const inputName = document.getElementById("nameInput").value.trim();
