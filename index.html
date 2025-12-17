@@ -2,26 +2,27 @@
 <html>
 <head>
   <title>Secret Santa Home</title>
+  <link rel="stylesheet" href="secretSanta.css">
 </head>
-<link rel="stylesheet" href="secretSanta.css">
 <body>
   <h1 class="title">Secret Santa Home</h1>
 
   <!-- Lookup gift recipient -->
-  <label class="body-text" for="nameInput">Enter your name, Ponga su nombre aqi:</label><br>
-  <input type="text" id="nameInput" placeholder="e.g. Mom"><br><br>
-  <button class="button" onclick="lookupSanta()">Find My Match, Enuentra a mi pareja</button>
+  <label class="label-text" for="nameInput">Enter your name:</label>
+  <input type="text" id="nameInput" class="input-field">
+  <button class="btn primary-btn" onclick="lookupSanta()">Find My Match</button>
 
-  <h2>Result</h2>
-  <pre id="output"></pre>
+  <h2 class="section-title">Wish Lists</h2>
+  <pre id="output" class="result-box"></pre>
 
-  <h2 class="Prompts">Wish Lists</h2>
+  <h2 class="section-title">Wish Lists</h2>
+  <h3 class="info-text">
+    The price limit for this Secret Santa will be between $30 - $35,<br>
+    El límite de precio para este Amigo Secreto será entre $30 - $35.
+  </h3>
+  <div id="wishList" class="wish-list-container"></div>
 
-  <h3 class="body-text">The price limit for this Secret Santa will be between 30$ - 35$,<br>
-    El límite de precio para este Amigo Secreto será entre 30$ - 35$.$</h3>
-  <div id="wishList"></div>
-
-  <p><a href="wishList.html">Go to Wish List Page</a></p>
+  <p class="nav-link"><a href="wishList.html">Go to Wish List Page</a></p>
 
   <script src="secretSanta.js"></script>
 </body>

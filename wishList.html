@@ -7,19 +7,18 @@
 <body>
   <h1 class="title">Secret Santa Wish List</h1>
 
-  <label for="nameInput">Enter your name, <br> Su nombre aqi:</label><br>
-  <input type="text" id="nameInput" placeholder="e.g. Mom"><br><br>
+  <label class="label-text" for="nameInput">Enter your name:</label>
+  <input type="text" id="nameInput" class="input-field">
 
-  <label class="body-text" for="wishInput">Add 3 gifts you would like to receive please ensure they are within budget no more than 35$ no less than 30$
-    <br>Agrega 3 regalos que te gustaría recibir, por favor asegúrate de que estén dentro del presupuesto, no más de 35$ y no menos de 30$.:</label><br>
-  <input type="text" id="wishInput" placeholder="e.g. New sweater"><br><br>
+  <label class="label-text" for="wishInput">Add 3 gifts you would like:</label>
+  <input type="text" id="wishInput" class="input-field">
 
-  <button class="button" onclick="saveWish()">Save Wish</button>
+  <button class="btn primary-btn" onclick="saveWish()">Save Wish</button>
 
-  <h2 class="Prompts">Your Wishes</h2>
-  <div id="wishList"></div>
+  <h2 class="section-title">Your Wishes</h2>
+  <div id="wishList" class="wish-list-container"></div>
 
-  <p class="pages"><a href="index.html">Back to Home Page</a></p>
+  <p class="nav-link"><a href="index.html">Back to Home Page</a></p>
 
   <script src="secretSanta.js"></script>
 </body>
