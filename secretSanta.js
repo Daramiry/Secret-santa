@@ -19,12 +19,23 @@ function secretSanta(names) {
 
 // Initialize assignments once
 function initSanta() {
-  const names = ["Lupe", "Kim", "Maria", "Diego", "Miguel", "Victor", "Kax", "Dany", "Elaishah", "Marie"]; // 👈 family list
-  let saved = localStorage.getItem("secretSantaAssignments");
-  if (!saved) {
-    const result = secretSanta(names);
-    localStorage.setItem("secretSantaAssignments", JSON.stringify(result));
-  }
+  // Fixed assignments for everyone
+  const assignments = {
+    "Lupe": "Victor",
+    "Kim": "Maria",
+    "Maria": "Diego",
+    "Diego": "Elaishah",
+    "Miguel": "Lupe",
+    "Victor": "Kim",
+    "Kax": "Miguel",
+    "Dany": "Marie",
+    "Elaishah": "Kax",
+    "Marie": "Dany"
+  };
+
+  // Save once so lookupSanta can use it
+  localStorage.setItem("secretSantaAssignments", JSON.stringify(assignments));
+
   loadWishes();
 }
 
